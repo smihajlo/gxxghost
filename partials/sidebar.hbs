@@ -4,14 +4,14 @@
     {{> custom/owner}}
     {{#get "posts" limit="5" filter="image:-null" order="created_at desc"}}
     {{#if posts}}
-    <div class="gxx_sidebar_t"><span>图片</span><i></i></div>
+    <div class="gxx_sidebar_t"><span>Image</span><i></i></div>
     <div class="gxx_sidebar_i">
         <div class="gxx_sidebar_i_img">
             {{#foreach posts}}
                 <a href="/{{slug}}/">
                     <div class="gxx_sidebar_i_imgi" style="background-image:url('{{image}}')" alt="{{title}}"></div>
                     <div class="gxx_sidebar_i_imgt">{{title}}</div>
-                    <div class="gxx_sidebar_i_imgd"><i class="gxxicon-time"></i> {{date format="YYYY年MM月DD日"}}</div>
+                    <div class="gxx_sidebar_i_imgd"><i class="gxxicon-time"></i> {{date format="MMM Do, YYYY"}}</div>
                 </a>
             {{/foreach}}
         </div>
@@ -20,7 +20,7 @@
     {{/get}}
     {{#get "tags" limit="30" filter="name:-'笔记'+name:-'作品'+name:-'杂货'" include="count.posts" order="count.posts desc"}}
     {{#if tags}}
-    <div class="gxx_sidebar_t"><span>标签</span><i></i></div>
+    <div class="gxx_sidebar_t"><span>Label</span><i></i></div>
     <div class="gxx_sidebar_i">
         <div class="gxx_sidebar_i_b" id="GxxSidebarTags">
             {{#foreach tags}}
